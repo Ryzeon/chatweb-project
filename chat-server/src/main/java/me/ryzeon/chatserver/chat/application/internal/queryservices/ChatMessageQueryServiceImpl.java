@@ -4,9 +4,9 @@ import me.ryzeon.chatserver.chat.domain.model.aggregates.ChatMessage;
 import me.ryzeon.chatserver.chat.domain.model.queries.GetAllChatMessageByGroupId;
 import me.ryzeon.chatserver.chat.domain.services.ChatMessageQueryService;
 import me.ryzeon.chatserver.chat.infrastructure.persistence.mongodb.ChatMessageRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ChatMessageQueryServiceImpl implements ChatMessageQueryService {
@@ -18,7 +18,7 @@ public class ChatMessageQueryServiceImpl implements ChatMessageQueryService {
     }
 
     @Override
-    public List<ChatMessage> handle(GetAllChatMessageByGroupId query) {
-        return chatMessageRepository.findAllByGroupId(query.groupId());
+    public Page<ChatMessage> handle(GetAllChatMessageByGroupId query, Pageable pageable) {
+        return chatMessageRepository.findAllByGroupId(query.groupId(), pageable);
     }
 }
