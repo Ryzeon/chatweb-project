@@ -2,10 +2,10 @@ package me.ryzeon.chatserver.chat.domain.model.queries;
 
 import java.util.List;
 
-public record GetAllChatGroupById(
+public record GetAllChatGroupByIds(
         List<Long> ids
 ) {
-   public GetAllChatGroupById {
+   public GetAllChatGroupByIds {
        if (ids == null) {
            throw new IllegalArgumentException("Group ID cannot be null");
        }

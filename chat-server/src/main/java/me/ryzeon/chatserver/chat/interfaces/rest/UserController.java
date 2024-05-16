@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 import java.util.Map;
 
-@Controller()
+@Controller
 @AllArgsConstructor
 public class UserController {
 

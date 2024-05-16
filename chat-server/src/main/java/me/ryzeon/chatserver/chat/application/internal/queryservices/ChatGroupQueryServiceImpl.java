@@ -1,7 +1,7 @@
 package me.ryzeon.chatserver.chat.application.internal.queryservices;
 
 import me.ryzeon.chatserver.chat.domain.model.aggregates.ChatGroup;
-import me.ryzeon.chatserver.chat.domain.model.queries.GetAllChatGroupById;
+import me.ryzeon.chatserver.chat.domain.model.queries.GetAllChatGroupByIds;
 import me.ryzeon.chatserver.chat.domain.services.ChatGroupQueryService;
 import me.ryzeon.chatserver.chat.infrastructure.persistence.mongodb.ChatGroupRepository;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class ChatGroupQueryServiceImpl implements ChatGroupQueryService {
     }
 
     @Override
-    public List<ChatGroup> handle(GetAllChatGroupById query) {
+    public List<ChatGroup> handle(GetAllChatGroupByIds query) {
         return chatGroupRepository.findAllById(query.ids());
     }
 }
