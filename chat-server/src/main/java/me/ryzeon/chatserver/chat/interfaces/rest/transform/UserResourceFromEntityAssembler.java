@@ -1,11 +1,13 @@
 package me.ryzeon.chatserver.chat.interfaces.rest.transform;
 
+import lombok.experimental.UtilityClass;
 import me.ryzeon.chatserver.chat.domain.model.aggregates.User;
 import me.ryzeon.chatserver.chat.interfaces.rest.resources.UserResource;
 
-public class UseResourceFromEntityAssembler {
+@UtilityClass
+public class UserResourceFromEntityAssembler {
 
-    public static UserResource toResourceFromEntity(User entity) {
+    public UserResource toResourceFromEntity(User entity) {
         return new UserResource(
                 entity.getId(),
                 entity.getNickname(),
