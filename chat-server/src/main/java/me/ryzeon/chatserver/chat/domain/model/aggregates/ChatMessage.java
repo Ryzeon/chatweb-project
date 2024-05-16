@@ -17,6 +17,7 @@ public class ChatMessage {
     private String sender;
     private Long groupId;
     private String content;
+
     @CreatedDate
     private Date createdAt;
 

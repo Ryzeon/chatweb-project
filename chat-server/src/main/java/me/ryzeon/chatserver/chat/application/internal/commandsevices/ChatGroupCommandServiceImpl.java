@@ -2,6 +2,8 @@ package me.ryzeon.chatserver.chat.application.internal.commandsevices;
 
 import me.ryzeon.chatserver.chat.domain.model.aggregates.ChatGroup;
 import me.ryzeon.chatserver.chat.domain.model.commands.CreateChatGroupCommand;
+import me.ryzeon.chatserver.chat.domain.model.commands.JoinUserGroupCommand;
+import me.ryzeon.chatserver.chat.domain.model.commands.LeaveUserGroupCommand;
 import me.ryzeon.chatserver.chat.domain.services.ChatGroupCommandService;
 import me.ryzeon.chatserver.chat.infrastructure.persistence.mongodb.ChatGroupRepository;
 import org.springframework.stereotype.Service;
