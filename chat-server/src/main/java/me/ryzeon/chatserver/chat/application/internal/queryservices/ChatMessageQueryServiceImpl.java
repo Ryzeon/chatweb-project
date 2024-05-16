@@ -19,6 +19,6 @@ public class ChatMessageQueryServiceImpl implements ChatMessageQueryService {
 
     @Override
     public List<ChatMessage> handle(GetAllChatMessageByGroupId query) {
-        return List.of();
+        return chatMessageRepository.findAllByGroupId(query.groupId());
     }
 }
