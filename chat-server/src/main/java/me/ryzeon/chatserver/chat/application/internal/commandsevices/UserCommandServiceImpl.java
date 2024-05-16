@@ -54,9 +54,11 @@ public class UserCommandServiceImpl implements UserCommandService {
     @Override
     public void handle(LeaveUserGroupCommand command) {
         if (verifyIfUserAndGroupExist(command.userId(), command.groupId())) {
-            User user = userRepository.findById(command.userId()).get();
-            user.leaveChatGroup(command.groupId());
-            userRepository.save(user);
+            User user = userRepository.findById(command.userId()).orElse(null);
+            if (user != null) {
+                user.leaveChatGroup(command.groupId());
+                userRepository.save(user);
+            }
         }
     }
 }
