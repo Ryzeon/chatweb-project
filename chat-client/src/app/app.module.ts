@@ -21,9 +21,20 @@ import {SidebarModule} from "primeng/sidebar";
 import {ChatSidebarContentComponent} from './chat/components/chat-group-sidebar-content/chat-sidebar-content.component';
 import {ChatPageComponent} from './chat/pages/chat-page/chat-page.component';
 import {HttpClientModule} from "@angular/common/http";
-import { ChatGroupCreatedDialogComponent } from './chat/components/chat-group-created-dialog/chat-group-created-dialog.component';
+import {
+  ChatGroupCreatedDialogComponent
+} from './chat/components/chat-group-created-dialog/chat-group-created-dialog.component';
 import {DialogModule} from "primeng/dialog";
 import {DialogService} from "primeng/dynamicdialog";
+import {StompClientService} from "./shared/service/stomp/stomp-client.service";
+import {stompConfig} from "./infrastructure/communication/config/StompConfig";
+
+const createStompClientService = () => {
+  const rxStomp = new StompClientService();
+  rxStomp.configure(stompConfig);
+  rxStomp.activate();
+  return rxStomp;
+}
 
 @NgModule({
   declarations: [
@@ -55,7 +66,11 @@ import {DialogService} from "primeng/dynamicdialog";
   ],
   providers: [
     DialogService,
-    MessageService
+    MessageService,
+    {
+      provide: StompClientService,
+      useFactory: createStompClientService
+    }
   ],
   bootstrap: [AppComponent]
 })
