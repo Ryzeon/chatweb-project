@@ -1,0 +1,14 @@
+<div>
+  <form [formGroup]="groupForm" (ngSubmit)="createChatGroup()">
+    <div>
+      <p-floatLabel>
+        <input pInputText id="name" formControlName="name"/>
+        <label for="name">Awesome Group Name</label>
+      </p-floatLabel>
+    </div>
+
+    <div class="mt-3 text-center">
+      <p-button type="submit" label="Create"></p-button>
+    </div>
+  </form>
+</div>

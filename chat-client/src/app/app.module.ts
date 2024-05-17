@@ -14,14 +14,32 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastModule} from "primeng/toast";
 import {MessagesModule} from "primeng/messages";
 import {MessageService} from "primeng/api";
+import {ToolbarContentComponent} from './public/components/toolbar-content/toolbar-content.component';
+import {HomePageComponent} from './public/pages/home-page/home-page.component';
+import {ToolbarModule} from "primeng/toolbar";
+import {SidebarModule} from "primeng/sidebar";
+import {ChatSidebarContentComponent} from './chat/components/chat-group-sidebar-content/chat-sidebar-content.component';
+import {ChatPageComponent} from './chat/pages/chat-page/chat-page.component';
+import {HttpClientModule} from "@angular/common/http";
+import { ChatGroupCreatedDialogComponent } from './chat/components/chat-group-created-dialog/chat-group-created-dialog.component';
+import {DialogModule} from "primeng/dialog";
+import {DialogService} from "primeng/dynamicdialog";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ToolbarContentComponent,
+    HomePageComponent,
+    ChatSidebarContentComponent,
+    ChatPageComponent,
+    ChatGroupCreatedDialogComponent
   ],
   imports: [
+    DialogModule,
+    HttpClientModule,
+    ToastModule,
     BrowserModule,
     BrowserAnimationsModule,
     MessagesModule,
@@ -32,9 +50,11 @@ import {MessageService} from "primeng/api";
     InputTextModule,
     ReactiveFormsModule,
     FormsModule,
-    ToastModule,
+    ToolbarModule,
+    SidebarModule
   ],
   providers: [
+    DialogService,
     MessageService
   ],
   bootstrap: [AppComponent]

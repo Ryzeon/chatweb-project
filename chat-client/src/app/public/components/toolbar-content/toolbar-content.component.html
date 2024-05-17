@@ -1,0 +1,24 @@
+<div class="flex place-content-center">
+  <p-toolbar styleClass="mt-3 shadow-2 place-items-center rounded-xl bg-teal-400 w-full">
+    <ng-template pTemplate="start">
+    </ng-template>
+    <ng-template pTemplate="center">
+      <div class="flex flex-wrap align-items-center gap-2">
+        <button (click)="sidebarVisible()"
+          class="p-link inline-flex justify-content-center align-items-center text-white hover:bg-white-alpha-10 transition-all transition-duration-200">
+          <p class="mr-2 text-xl">Chat Groups</p>
+          <i class="pi pi-comment text-2xl"></i>
+        </button>
+        <button
+          (click)="logout()"
+          class="ml-3 p-link inline-flex justify-content-center align-items-center text-white hover:bg-white-alpha-10 transition-all transition-duration-200">
+          <p class="mr-2 text-xl"> Sign Out </p>
+          <i class="pi pi-sign-out text-2xl"></i>
+        </button>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="end">
+    </ng-template>
+  </p-toolbar>
+
+</div>

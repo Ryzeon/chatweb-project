@@ -10,6 +10,11 @@ export class AuthGuardService {
   }
 
   canActivate(): boolean {
-    return false;
+    const access = true;
+    if (!access) {
+      this.router.navigate(['/login']);
+      return false;
+    }
+    return true;
   }
 }
