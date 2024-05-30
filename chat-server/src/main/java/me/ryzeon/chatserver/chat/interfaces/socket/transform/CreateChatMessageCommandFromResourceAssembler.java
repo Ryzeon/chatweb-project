@@ -1,8 +1,8 @@
-package me.ryzeon.chatserver.chat.interfaces.rest.transform;
+package me.ryzeon.chatserver.chat.interfaces.socket.transform;
 
 import lombok.experimental.UtilityClass;
 import me.ryzeon.chatserver.chat.domain.model.commands.CreateChatMessageCommand;
-import me.ryzeon.chatserver.chat.interfaces.rest.resources.CreateChatMessageResource;
+import me.ryzeon.chatserver.chat.interfaces.socket.resources.CreateChatMessageResource;
 
 @UtilityClass
 public class CreateChatMessageCommandFromResourceAssembler {

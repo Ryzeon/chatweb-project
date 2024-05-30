@@ -38,19 +38,7 @@ public class UserController {
                 .orElse(null);
     }
 
-    @MessageMapping("/user.leaveFromGroup")
-    @SendTo("/user/topic")
-    public void leaveUserFromGroup(Long userId, Long chatGroupId) {
-        var leaveUserGroupCommand = new LeaveUserGroupCommand(userId, chatGroupId);
-        userCommandService.handle(leaveUserGroupCommand);
-    }
 
-    @MessageMapping("/user.joinToGroup")
-    @SendTo("/user/topic")
-    public void joinUserToGroup(Long userId, Long chatGroupId) {
-        var joinUserGroupCommand = new JoinUserGroupCommand(userId, chatGroupId);
-        userCommandService.handle(joinUserGroupCommand);
-    }
 
     @GetMapping("/users")
     public ResponseEntity<List<User>> findAllUsersByGroup(

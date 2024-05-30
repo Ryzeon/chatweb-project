@@ -1,4 +1,4 @@
-package me.ryzeon.chatserver.chat.interfaces.rest.resources;
+package me.ryzeon.chatserver.chat.interfaces.shared.resources;
 
 public record ChatMessageResource(
         Long id,

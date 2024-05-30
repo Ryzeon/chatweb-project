@@ -1,8 +1,8 @@
-package me.ryzeon.chatserver.chat.interfaces.rest.transform;
+package me.ryzeon.chatserver.chat.interfaces.shared.transform;
 
 import lombok.experimental.UtilityClass;
 import me.ryzeon.chatserver.chat.domain.model.aggregates.ChatMessage;
-import me.ryzeon.chatserver.chat.interfaces.rest.resources.ChatMessageResource;
+import me.ryzeon.chatserver.chat.interfaces.shared.resources.ChatMessageResource;
 
 @UtilityClass
 public class ChatMessageResourceFromEntityAssembler {
